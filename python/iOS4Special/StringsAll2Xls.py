@@ -61,6 +61,9 @@ def export(options, filename):
     ws = workbook.add_sheet(filename) # ('*.strings')
 
     for parent, dirnames, filenames in os.walk(directory):
+        # 目录排序
+        dirnames.sort()
+
         for dirname in dirnames:
             # 排除非多语言资源目录
             if ".lproj" not in dirname:
